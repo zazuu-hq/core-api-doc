@@ -1,37 +1,63 @@
-## Welcome to GitHub Pages
+Welcome to the core-api-doc wiki!
 
-You can use the [editor on GitHub](https://github.com/zazuu-hq/core-api-doc/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Table of content
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Making a transfer
 
-### Markdown
+# Authentication
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Authentication
 
-```markdown
-Syntax highlighted code block
+- Get API Key
+- Contact support team support@zazuu.co
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```json
+  "headers": {
+    "Content-Type": "application/json",
+    "x-api-key": "<API-KEY>"
+  }
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## Step 2
 
-### Jekyll Themes
+- See list of partners available => GET /partners/available
+- Then subscribe to a partner => GET /partners/subscribe
+- Then you can see the list of subscribed partners => GET /partners/list
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zazuu-hq/core-api-doc/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Step 3
 
-### Support or Contact
+Activate the corridor you want to support
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- /corridors/create
+- See list of corridors with => /corridors
+
+## Step 4
+
+View rate with
+
+- GET /rates
+
+## Step 5 - Subscribe to web hooks
+
+The events you can subscribe to are:
+
+- transaction.initiated
+- transaction.success
+- transaction.failed
+- transaction.cancelled
+- transaction.processing
+- transaction.refunded
+
+> **_NOTE:_** Please acknowledge all webhooks with a 2xx response. A header property called x-webhook-key, containing your specified secret, is sent as part of all requests which you should use to verify the authenticity of the webhook. In cases of failed acknowledgements, Zazuu will resend webhooks on the hour for the next 24 hours (this can be further reduced), after which the webhook will be discarded. For events of type transaction.failed, if you have enableSmartReroute set to true for a corridor, we add an isFinal property, which can be true or false, to the data payload to let you know when are done rerouting a transaction and will no longer process.
+
+## Step 6 - Initiate a transaction
+
+- POST /transactions
+- You can get transactions history GET /transactions
+- You can get a single transaction history GET /transactions/transactionId
+
+## Others
+
+- Get supported banks by payout partner: POST /payout-banks
+- Validate bank: POST /account/validate
+- Validate momo: POST /momo/validate
