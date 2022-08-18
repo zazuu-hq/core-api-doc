@@ -3,6 +3,7 @@
 
 @import '{{ site.theme }}';
 
-body .site-footer {
+body .site-footer,
+#zazuu-api-integration-guide {
   display: none important!;
 }

@@ -12,10 +12,14 @@ When you sign up for an account we will send you a secret API key, you can authe
 
 Example:
 
-```curl
-curl -i -X GET \
-  'https://.../transactions' \
-  -H 'X-API-KEY: {{ApiSecretKey}}'
+```json
+{
+	"headers" {
+		"Content-Type": "application/json",
+		"Accept": "application/json",
+		"X-API-KEY": "ApiSecretKey"
+	}
+}
 ```
 
 # Environment
@@ -48,7 +52,7 @@ You need to subscribe to a Payout Partner
 To activate the corridor you want to support:
 
 1. To activate a corridor, call: _**POST**_ `/corridors/create`
-2. Then see the list of corridors you're subscribes to, call: _**get**_ `/corridors`
+2. Then see the list of corridors you're subscribes to, call: _**GET**_ `/corridors`
 
 > See API reference for API payload and response
 
