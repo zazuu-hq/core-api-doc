@@ -35,7 +35,7 @@ Zazuu API is available in both Live as well as Test environments. It's important
 
 Contact [support@zazuu.co](mailto:support@zazuu.co) to have access to our full API reference
 
-# Steps to creating a transaction
+# Steps to initiating a transaction
 
 ## Step 1 - Subscribe to a Payout Partner
 
