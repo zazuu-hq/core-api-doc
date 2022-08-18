@@ -41,19 +41,19 @@ Contact [support@zazuu.co](mailto:support@zazuu.co) to have access to our full A
 
 You need to subscribe to a Payout Partner
 
-1. To see the list of partners we support call:
+- To see the list of partners we support call:
 
 ```
 GET: /partners/available
 ```
 
-2. Then subscribe to a partner call:
+- Then subscribe to a partner call:
 
 ```
 POST: /partners/subscribe
 ```
 
-3. Then you can see the list of subscribed partners call:
+- Then you can see the list of subscribed partners call:
 
 ```
 GET: /partners/list
@@ -65,13 +65,13 @@ GET: /partners/list
 
 To activate the corridor you want to support:
 
-1. To activate a corridor
+- To activate a corridor
 
 ```
 POST: /corridors/create
 ```
 
-2. Then see the list of corridors you're subscribes to:
+- Then see the list of corridors you're subscribes to:
 
 ```
 GET: /corridors
@@ -91,13 +91,13 @@ GET: /rates
 
 ## Step 4 - Subscribe to web hooks
 
-1. To subscribe to a web hook:
+- To subscribe to a web hook:
 
 ```
 POST: /webhooks
 ```
 
-2. To see list of web hooks subscribed to:
+- To see list of web hooks subscribed to:
 
 ```
 GET: /webhooks
@@ -120,19 +120,19 @@ GET: /webhooks
 
 To activate the corridor you want to support:
 
-1. To activate a corridor:
+- To activate a corridor:
 
 ```
 POST: /transactions
 ```
 
-2. Then see the list of corridors you're subscribes to
+- Then see the list of corridors you're subscribes to
 
 ```
 GET: /transactions
 ```
 
-3. You can get a single transaction history:
+- You can get a single transaction history:
 
 ```
 GET: /transactions/{transactionId}
