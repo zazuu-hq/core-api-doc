@@ -2,7 +2,7 @@
 
 ## Get started
 
-Zazuu provides a collection of APIs that enable you to process and manage transfers. Our APIs accept and return JSON in the HTTP body, and return standard HTTP response codes. You can consume the APIs directly using your favorite HTTP/REST library. We have a testing environment called sandbox, which you can contact [support@zazuu.co](mailto:support@zazuu.co) to sign up for test API calls without affecting live data.
+You can consume the APIs directly using your favorite HTTP/REST library. We have a testing environment called sandbox, which you can contact [support@zazuu.co](mailto:support@zazuu.co) to sign up for test API calls without affecting live data.
 
 # Authentication
 
@@ -41,9 +41,23 @@ Contact [support@zazuu.co](mailto:support@zazuu.co) to have access to our full A
 
 You need to subscribe to a Payout Partner
 
-1. To see the list of partners we support call: _**GET**_ `/partners/available`
-2. Then subscribe to a partner call: _**POST**_ `/partners/subscribe`
-3. Then you can see the list of subscribed partners call: _**GET**_ `/partners/list`
+1. To see the list of partners we support call:
+
+```
+GET: /partners/available
+```
+
+2. Then subscribe to a partner call:
+
+```
+POST: /partners/subscribe
+```
+
+3. Then you can see the list of subscribed partners call:
+
+```
+GET: /partners/list
+```
 
 > See API reference for API payload and response
 
@@ -51,23 +65,45 @@ You need to subscribe to a Payout Partner
 
 To activate the corridor you want to support:
 
-1. To activate a corridor, call: _**POST**_ `/corridors/create`
-2. Then see the list of corridors you're subscribes to, call: _**GET**_ `/corridors`
+1. To activate a corridor
+
+```
+POST: /corridors/create
+```
+
+2. Then see the list of corridors you're subscribes to:
+
+```
+GET: /corridors
+```
 
 > See API reference for API payload and response
 
 ## Step 3 - Get Fx Rates
 
-To get Fx Rates call: _**GET**_ `/rates`
+To get Fx Rates:
+
+```
+GET: /rates
+```
 
 **_See API reference for API payload and response_**
 
 ## Step 4 - Subscribe to web hooks
 
-1. To subscribe to a web hook: _**POST**_ `/webhooks`
-2. TO see list of web hooks subscribed to: _**GET**_ `/webhooks`
+1. To subscribe to a web hook:
 
-List of events an subscribe to:
+```
+POST: /webhooks
+```
+
+2. To see list of web hooks subscribed to:
+
+```
+GET: /webhooks
+```
+
+### List of events:
 
 - transaction.initiated
 - transaction.success
@@ -84,9 +120,23 @@ List of events an subscribe to:
 
 To activate the corridor you want to support:
 
-1. To activate a corridor, call: _**POST**_ `/transactions`
-2. Then see the list of corridors you're subscribes to, call: _**GET**_ `/transactions`
-3. You can get a single transaction history _**GET**_ `/transactions/{transactionId}`
+1. To activate a corridor:
+
+```
+POST: /transactions
+```
+
+2. Then see the list of corridors you're subscribes to
+
+```
+GET: /transactions
+```
+
+3. You can get a single transaction history:
+
+```
+GET: /transactions/{transactionId}
+```
 
 **_See API reference for API payload and response_**
 
