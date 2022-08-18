@@ -1,0 +1,8 @@
+---
+---
+
+@import '{{ site.theme }}';
+
+body .site-footer {
+  display: none important!;
+}

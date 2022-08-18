@@ -1,4 +1,4 @@
-## Zazuu API Integration Guide
+# Zazuu API Integration Guide
 
 ## Get started
 

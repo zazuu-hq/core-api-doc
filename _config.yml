@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
+title: Zazuu Integration Guide
+description: Zazuu provides a collection of APIs that enable you to process and manage transfers. Our APIs accept and return JSON in the HTTP body, and return standard HTTP response codes
 github:
   is_project_page: false
