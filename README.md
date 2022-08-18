@@ -1,63 +1,27 @@
-Welcome to the core-api-doc wiki!
+## Zazuu API Reference
 
-Table of content
+## Get started
 
-# Making a transfer
+Zazuu provides a collection of APIs that enable you to process and manage transfers. Our APIs accept and return JSON in the HTTP body, and return standard HTTP response codes. You can consume the APIs directly using your favorite HTTP/REST library. We have a testing environment called sandbox, which you can contact support@zazuu.co to sign up for test API calls without affecting live data.
 
 # Authentication
 
-## Authentication
+When you sign up for an account we will send you a secret API key, you can authenticate with the Secret API keys. Unless explicitly stated, all endpoints require authentication using the Secret API Keys.
 
-- Get API Key
-- Contact support team support@zazuu.co
+## ApiSecretKey
 
 ```json
-  "headers": {
-    "Content-Type": "application/json",
-    "x-api-key": "<API-KEY>"
-  }
+"headers": {
+	"Content-Type": "application/json",
+	"x-api-key": "ApiSecretKey"
+}
 ```
 
-## Step 2
+# Environment
 
-- See list of partners available => GET /partners/available
-- Then subscribe to a partner => GET /partners/subscribe
-- Then you can see the list of subscribed partners => GET /partners/list
+Zazuu API is available in both Live as well as Test environments. It's important to note that the test environment is limited to testing purposes and deals with mock data while the live environment deals with live integrations and information.
 
-## Step 3
-
-Activate the corridor you want to support
-
-- /corridors/create
-- See list of corridors with => /corridors
-
-## Step 4
-
-View rate with
-
-- GET /rates
-
-## Step 5 - Subscribe to web hooks
-
-The events you can subscribe to are:
-
-- transaction.initiated
-- transaction.success
-- transaction.failed
-- transaction.cancelled
-- transaction.processing
-- transaction.refunded
-
-> **_NOTE:_** Please acknowledge all webhooks with a 2xx response. A header property called x-webhook-key, containing your specified secret, is sent as part of all requests which you should use to verify the authenticity of the webhook. In cases of failed acknowledgements, Zazuu will resend webhooks on the hour for the next 24 hours (this can be further reduced), after which the webhook will be discarded. For events of type transaction.failed, if you have enableSmartReroute set to true for a corridor, we add an isFinal property, which can be true or false, to the data payload to let you know when are done rerouting a transaction and will no longer process.
-
-## Step 6 - Initiate a transaction
-
-- POST /transactions
-- You can get transactions history GET /transactions
-- You can get a single transaction history GET /transactions/transactionId
-
-## Others
-
-- Get supported banks by payout partner: POST /payout-banks
-- Validate bank: POST /account/validate
-- Validate momo: POST /momo/validate
+| Environment | Base URL                 |
+| ----------- | ------------------------ |
+| Sandbox     | contact support@zazuu.co |
+| Production  | contact support@zazuu.co |
