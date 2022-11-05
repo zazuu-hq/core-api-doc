@@ -1,6 +1,6 @@
 # Zazuu API Integration Guide
 
-## Get started
+<!-- ## Get started
 
 You can consume the APIs directly using your favorite HTTP/REST library. We have a testing environment called sandbox, which you can contact [support@zazuu.co](mailto:support@zazuu.co) to sign up for test API calls without affecting live data.
 
@@ -160,4 +160,4 @@ GET: /momo/validate
 GET: /account/validate
 ```
 
-**_See API reference for API payload and response_**
+**_See API reference for API payload and response_** -->
