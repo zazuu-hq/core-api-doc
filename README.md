@@ -1,6 +1,6 @@
 # Zazuu API Integration Guide
 
-<!-- ## Get started
+## Get started
 
 You can consume the APIs directly using your favorite HTTP/REST library. We have a testing environment called sandbox, which you can contact [support@zazuu.co](mailto:support@zazuu.co) to sign up for test API calls without affecting live data.
 
@@ -37,31 +37,7 @@ Contact [support@zazuu.co](mailto:support@zazuu.co) to have access to our full A
 
 # Steps to initiating a transaction
 
-## Step 1 - Subscribe to a Payout Partner
-
-You need to subscribe to a Payout Partner
-
-- To see the list of partners we support call:
-
-```
-GET: /partners/available
-```
-
-- Then subscribe to a partner call:
-
-```
-POST: /partners/subscribe
-```
-
-- Then you can see the list of subscribed partners call:
-
-```
-GET: /partners/list
-```
-
-> See API reference for API payload and response
-
-## Step 2 - Activate a corridor
+## Step 1 - Activate a corridor
 
 To activate the corridor you want to support:
 
@@ -71,7 +47,7 @@ To activate the corridor you want to support:
 POST: /corridors/create
 ```
 
-- Then see the list of corridors you're subscribes to:
+- Then see the list of corridors you're subscribed to:
 
 ```
 GET: /corridors
@@ -79,17 +55,19 @@ GET: /corridors
 
 > See API reference for API payload and response
 
-## Step 3 - Get Fx Rates
+## Step 2 - Get Fx Rates
 
-To get Fx Rates:
+To get the Fx Rates:
 
 ```
 GET: /rates
 ```
 
+> **NOTE**: You can add the query param `type=best_rate` to fetch the best Fx rate. This will return a single partner with the best Fx rate.
+
 **_See API reference for API payload and response_**
 
-## Step 4 - Subscribe to web hooks
+## Step 3 - Subscribe to web hooks
 
 - To subscribe to a web hook:
 
@@ -116,7 +94,7 @@ GET: /webhooks
 
 **_See API reference for API payload and response_**
 
-## Step 5 - Initiate a transaction
+## Step 4 - Initiate a transaction
 
 To activate the corridor you want to support:
 
@@ -142,6 +120,12 @@ GET: /transactions/{transactionId}
 
 ## Reference data
 
+### See list of available partners
+
+```
+GET: /partners/available
+```
+
 ### Get supported banks by payout partner
 
 ```
@@ -160,4 +144,4 @@ GET: /momo/validate
 GET: /account/validate
 ```
 
-**_See API reference for API payload and response_** -->
+**_See API reference for API payload and response_**
